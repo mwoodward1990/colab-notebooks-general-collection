@@ -177,17 +177,17 @@ function SingleSectionHeader(props) {
         </Fade>
       )}
       </header>
-      <Row style={{justifyContent:'center'}}>
+      <Row style={{justifyContent:'center', gap:'1px',margin:'0 0 24px 0'}}>
         {project.features && ( 
           <Bounce top delay={1500}>
-            <Button variant="outline-secondary" type="button" size="sm" active onClick={() => selector("features")}>
+            <Button className="hero-btn" variant="outline-primary" type="button" size="sm" active onClick={() => selector("features")}>
               <h5>Features</h5>
             </Button>
           </Bounce> 
         )}
         {project.likes && ( 
           <Bounce top delay={1700}>
-            <Button variant="outline-secondary" type="button" size="sm" onClick={() => selector("likes")}>
+            <Button className="hero-btn" variant="outline-primary" type="button" size="sm" onClick={() => selector("likes")}>
               {project.id === "salesforce" ?
                 <h5>Salesforce Instance</h5>:
                   <h5>Likes</h5>
@@ -197,7 +197,7 @@ function SingleSectionHeader(props) {
         )}
         {(project.learnedFront || project.learnedBack) && ( 
           <Bounce top delay={1900}>
-            <Button variant="outline-secondary" type="button" size="sm" onClick={() => selector("learned")}>
+            <Button className="hero-btn" variant="outline-primary" type="button" size="sm" onClick={() => selector("learned")}>
               {project.id === "salesforce" ?
                 <h5>Trailhead Progress</h5> :
                   <h5>Learned</h5>
@@ -207,7 +207,7 @@ function SingleSectionHeader(props) {
         )}
         {project.technologies && ( 
           <Bounce top delay={2100}>
-            <Button variant="outline-secondary" type="button" size="sm" onClick={() => selector("tech")}>
+            <Button className="hero-btn" variant="outline-primary" type="button" size="sm" onClick={() => selector("tech")}>
               <h5>Tech</h5>
             </Button>
           </Bounce> 

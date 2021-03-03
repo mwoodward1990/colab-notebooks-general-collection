@@ -4,6 +4,8 @@ import { Card } from 'reactstrap'
 import styled from 'styled-components'
 //utilities
 import { useRouter } from "../util/router";
+//animations
+import { motion } from 'framer-motion';
 
 export default function Grid(props) {
   const router = useRouter();
@@ -32,13 +34,15 @@ export default function Grid(props) {
   `;
 
   const CardStyles = { 
-    border: '2px solid lightGray',
-    width: "auto", 
+    width: 'auto', 
     height: 'auto',
     alignItems:'center',
     padding:'20px 0 20px 0',
-    baackground: 'rgba(255,255,255,0.2)',
-    backdropFilter: 'blur(16px)'
+    background: 'rgba(255,255,255,0.1)',
+    backdropFilter: 'blur(3px)',
+    border: "rgba(255, 255, 255, 0.4) 1px solid", 
+    boxShadow:"2px 10px 10px rgba(0, 0, 0, 0.4)",
+    cursor:'pointer'
     }
   return(
       <Wrapper>
@@ -50,12 +54,17 @@ export default function Grid(props) {
               onClick={(e) => handleClick(e, project.id)}
             >
               <h3>{project.title}</h3>
-              <img src={project.img} alt={project.alt} 
+              <motion.img 
+                src={project.img} 
+                alt={project.alt} 
                 style={{
                   opacity:'1',
                   width:'200px',
-                  zIndex:'60'
+                  zIndex:'60',
+                  boxShadow:"2px 10px 10px rgba(0, 0, 0, 0.4)",
+                  cursor:'pointer'
                   }}
+                onHover={{ scale: 1.1 }}
               />
             </Card>
           )) :
