@@ -47,51 +47,6 @@ function HeroSection(props) {
           <Row>
           <Col xs={12} md={12} lg={6}>
             <SolarSystemNav image={props.image} />
-              <div style={{
-                marginTop:'75px', 
-                marginBottom:'18px',
-                paddingLeft:'20px',
-                }}>
-                <Row>
-                  <Fade delay={2600} cascade>
-                    <h5>Technologies</h5>
-                  </Fade>
-                </Row>
-                <Row>
-                  <Fade delay={3000}>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <SiJavascript size="25px" style={iconStyles}/>
-                    </motion.div>
-                  </Fade>
-                  <Fade delay={3400}>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaReact size="25px" style={iconStyles}/>
-                    </motion.div>
-                  </Fade>
-                  <Fade delay={3800}>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <SiPython size="25px" style={iconStyles}/>
-                    </motion.div>
-                  </Fade>
-                  <Fade delay={4200}>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <DiSqllite size="35px" style={iconStyles}/>
-                    </motion.div>
-                  </Fade>
-                </Row>
-              </div>
             </Col>
             {/* //style making the glass background style */}
             <Col sm={12} md={12} lg={6} fluid="true" style={{

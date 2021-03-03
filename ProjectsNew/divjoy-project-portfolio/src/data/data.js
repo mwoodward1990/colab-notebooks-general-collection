@@ -9,6 +9,7 @@ import weather from "../assets/weather.png";
 export const projectsData = [
   {
     id: 'to-do-app',
+    label: ['vanilla', 'noSql'],
     img: 'https://i.imgur.com/yLm4Fnd.png',
     title: 'To Do App',
     info:
@@ -37,6 +38,7 @@ export const projectsData = [
   },
   {
     id: 'salon-shop',
+    label: ['react', 'shopify'],
     img: 'https://i.imgur.com/GYa0e8o.png',
     title: 'Shopify Salon Shop',
     info:
@@ -59,6 +61,7 @@ export const projectsData = [
   },
   {
     id: 'coffee-shop',
+    label: ['react', 'shopify'],
     img: 'https://i.imgur.com/3uRmDeL.png',
     title: 'Shopify Coffee Shop',
     info:
@@ -87,6 +90,7 @@ export const projectsData = [
   },
   {
     id: 'salesforce',
+    label: ['salesforce'],
     img: '',
     title: 'Salesforce To Be Continued',
     info:
@@ -115,6 +119,7 @@ export const projectsData = [
   },
   {
     id: 'fictional-university',
+    label: 'wordpress',
     img: 'https://i.imgur.com/LEknxJx.png',
     title: 'Fictional University',
     info:
@@ -137,129 +142,346 @@ export const projectsData = [
     key: "6",
     src: 'https://i.imgur.com/LEknxJx.png',
     gif: "college"
-  }
-]
-
-
-export const data = [
+  },
     {
-      index: '1',
+      id: 'lyrics-search-vanilla',
+      label: 'vanilla',
       img: 'https://i.imgur.com/yssImRk.png',
       alt: 'Image of Lyrics Search app',
       caption: 'Lyrics Searching App  ',
       title: 'Lyrics Search',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       dateCompleted: '',
       description: 'Basic app built using vanilla Javascript and a lyrics searching API. Would like to integrate an additional API to source sheet music and/or tabs for Piano and Guitar. Following a tutorial by Brad Traversy.',
       link: 'https://loveliiivelaugh.github.io/lyricsSearchJS/',
       github: 'https://github.com/mwoodward1990/lyricsSearchJS',
     },
     {
-      index: '2',
+      id: 'flash-cards-vanilla',
+      label: 'vanilla',
       img: 'https://i.imgur.com/3UVRX9w.png',
       alt: '',
       caption: '',
       title: 'Flash Cards',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'A basic flash cards web app using vanilla Javascript and local storage. Following a tutorial by Brad Traversy.',
       link: 'https://loveliiivelaugh.github.io/memoryCardsJS/',
       github: 'https://github.com/mwoodward1990/memoryCardsJS',
     },
     {
-      index: '3',
+      id: 'video-player-vanilla',
+      label: 'vanilla',
       img: 'https://i.imgur.com/FLIe2MW.png',
       alt: '',
       caption: '',
       title: 'Custom Video Player',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'Custom video player built using vanilla Javascript. Following a tutorial by Brad Traversy.',
       link: 'https://loveliiivelaugh.github.io/videoPlayerJS/',
       github: 'https://github.com/mwoodward1990/videoPlayerJS',
     },
     {
-      index: '4',
+      id: 'meal-finder-vanilla',
+      label: 'vanilla',
       img: 'https://i.imgur.com/HlkIy5X.png',
       alt: '',
       caption: '',
       title: 'Meal Finder',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'A basic search app to find recipes with the searched for ingredient. Following a tutorial by Brad Traversy.',
       link: 'https://loveliiivelaugh.github.io/mealFinderJS/',
       github: 'https://github.com/mwoodward1990/mealFinderJS',
     },
     {
-      index: '5',
+      id: 'typing-game-vanilla',
+      label: 'vanilla',
       img: 'https://i.imgur.com/aNxj0Bs.png',
       alt: '',
       caption: '',
       title: 'Typing Game',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'This is a small typing game. Will add an API to dynamically bring in new words in addition to some extra functions distributing those words into seperate categories by their defined difficulties. Following a tutorial by Brad Traversy.',
       link: 'https://loveliiivelaugh.github.io/typingGameJS/',
       github: 'https://github.com/mwoodward1990/typingGameJS',
     },
     {
-      index: '6',
+      id: 'speech-text-vanilla',
+      label: 'vanilla',
       img: 'https://i.imgur.com/k4YdwOC.png',
       alt: '',
       caption: '',
       title: 'Speech Text Reader',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'Small text reader app to assist in reading. Following a tutorial by Brad Traversy.',
       link: 'https://loveliiivelaugh.github.io/speechTextReaderJS/',
       github: 'https://github.com/mwoodward1990/speechTextReaderJS',
     },
     {
-      index: '7',
+      id: 'firebase-auth',
+      label: ['noSql', 'react'],
       img: 'https://i.imgur.com/YnwMMfh.png',
       alt: 'Screenshot of Basic Auth with React and Firebase App',
       caption: 'Authentication with React and Firebase',
       title: 'Basic Authentication Login',
-      dateCompleted: '7/16/2020',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'Basic example of a login form with additional features such as "forgot password". Including an example of an HTML wireframe converted to a React UI. Fully functioning leveraging Firebase Authentication. HTML template was sourced from Colorlib but styling was substituted with Bootstrap.',
       status: 'Completed. I want to update the alerts for the client side form handling as well as update the default email templates for resetting password.',
       link: '',
       github: 'https://github.com/mwoodward1990/react-firebase-auth-example',
     },
     {
-      index: '8',
+      id: 'weather-react',
+      label: 'react',
       img: weather,
       alt: '',
       caption: '',
       title: 'React Weather App',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'A basic weather app to search for the 5 day weather forecast in your area.',
       link: 'https://adoring-mcclintock-6017c8.netlify.app/',
       github: 'https://github.com/loveliiivelaugh/react-weather-app',
     },
     {
-      index: '9',
+      id: 'music-search-react',
+      label: 'react',
       img: lyrics_search,
       alt: '',
       caption: '',
       title: 'React Music Search',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'A vanilla project converted to a small React app to search for lyrics of any songs using a lyrics searching API.',
       link: 'lyrics-search-react.netlify.app/',
       github: 'https://github.com/loveliiivelaugh/react-lyrics-app',
     },
     {
-      index: '10',
+      id: 'smart-menu',
+      label: 'react',
       img: meal_finder,
       alt: '',
       caption: '',
       title: 'React Smart Menu',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'A basic search app to find recipes with the searched for ingredient.',
       link: ' https://smart-menu-react.netlify.app/',
       github: 'https://github.com/loveliiivelaugh/react-smart-menu',
     },
     {
-      index: '10',
+      id: 'flash-cards-react',
+      label: ['react', 'noSql'],
       img: flash_cards,
       alt: '',
       caption: '',
       title: 'Flash Cards',
-      dateCompleted: '',
+      info:
+        '',
+      info2:
+        '',
+      features:
+        'Large, complex, 20+ page fictional university website. Built entirely with Wordpress using a hand crafted custom theme. Also includes custom post types, custom fields, custom Javascript and PHP functions.',
+      technologies: 
+        'HTML, CSS, JavaScript, Wordpress, PHP',
+      likes: '',
+      likesNotUsedYet: // This is not in use at the moment
+        'I like this project because it gave me a full overview of Wordpress and how to build complex websites using that incredibly popular platform. This was a project from a Udemy class that was 26.5 hours and taught by Brad Schiff, who I think is a phenomenal teacher and really explains the code in a way that makes it easy to understand.',
+      learnedFront:
+        'The ins and outs of Wordpress as a platform and how to create and build custom themes.',
+      learnedBack:
+        'Created custom post types and fields, used Wordpress plugins and customized admin panel to fit needs. Also used PHP and JavaScript to inject and enable dynamic content. This is also where I started writing some of my first custom functions in JavaScript. I familiarized myself with the Wordpress REST APIs as well and experimented with Wordpress as a headless content management solution.',
+      url: 'http://michaelw4.sgedu.site/',
+      repo: 'https://github.com/mwoodward1990/fictional-university-wp-example', // if no repo, the button will not show up
+      key: "6",
+      src: 'https://i.imgur.com/LEknxJx.png',
+      gif: "college",
       description: 'Flash cards mini game / app. Still a work in progress.',
       link: 'https://flash-cards-react.netlify.app/',
       github: 'https://github.com/loveliiivelaugh/react-flash-cards',

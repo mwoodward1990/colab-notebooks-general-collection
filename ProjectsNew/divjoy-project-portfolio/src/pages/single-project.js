@@ -13,7 +13,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 // animation
 import { motion } from 'framer-motion'
-import { pageVariants } from '../animations';
+import { pageVariants, BlackBoxTransition, BlueBoxTransition, PurpleBoxLeftTransition  } from '../animations';
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
 //data
@@ -23,16 +23,17 @@ import { useWindowSize } from '../hooks/useWindowSize';
 //background image
 import icon_wallpaper from "../assets/icon_wallpaper.jpg";
 
-function AboutPage(props) {
+function SingleProjectPage(props) {
   const router = useRouter();
   const { isMobile, isDesktop } = useWindowSize();
   const [isLoading, setIsLoading] = useState(false);
-  const id = router.location.state.id;
-  let gif = router.location.state.gif;
-  if (id === "salesforce") {
-    gif = "shopiforce-connector";
-  }
-  const video = setGif(gif);
+  console.info(router.match.params.item_id)
+  const id = router.match.params.item_id;
+  // let gif = router.location.state.gif;
+  // if (id === "salesforce") {
+  //   gif = "shopiforce-connector";
+  // }
+  // const video = setGif(gif);
   const project = findId(projectsData, id, setIsLoading); // be mindful this hook like function needs to be adjusted if data fields are adjusted.
   function handleOnClick(e){
     e.preventDefault();
@@ -44,9 +45,15 @@ function AboutPage(props) {
   //   setIsLoading(false);
   // }
 
-  console.info(isLoading);
   return (
     <>
+    <div>
+      <motion.section exit={{ opacity: 0 }}>
+        <BlackBoxTransition />
+        <BlueBoxTransition />
+        <PurpleBoxLeftTransition />
+
+      
     <motion.div
       initial="initial"
       animate="in"
@@ -73,7 +80,7 @@ function AboutPage(props) {
               title=""
               subtitle=""
               imgSrc={project.img}
-              embedUrl={video}
+              // embedUrl={video}
               url={project.url}
               repo={project.repo}
             />
@@ -102,8 +109,10 @@ function AboutPage(props) {
         </Row>
       </Section>
     </motion.div>
+    </motion.section>
+    </div>
     </>
   );
 }
 
-export default AboutPage;
+export default SingleProjectPage;

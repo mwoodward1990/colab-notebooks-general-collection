@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 //components
 import Section from "./Section";
+import SectionHeader from "./SectionHeader";
 import Carousel from './Carousel';
-//import data
-import { data } from '../data/data';
+import Grid from './Grid';
+//bootstrap
+import { Button } from "reactstrap";
 //animations
 import { motion } from 'framer-motion';
-import { Button } from "reactstrap";
 
 const ProjectsSectionTwo = (props) => {
+  const { data, label } = props;
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -57,14 +59,23 @@ const ProjectsSectionTwo = (props) => {
           bgImageOpacity={props.bgImageOpacity}
           style={{padding: "25px"}}
         >
-          <Carousel 
+          <SectionHeader
+            title={props.title}
+            subtitle={props.subtitle}
+            size={1}
+            spaced={true}
+          />
+          
+          <Grid data={data} label={label} />
+
+          {/* <Carousel 
             items={data}
             activeIndex={activeIndex}
             setAnimating={setAnimating}
             goToIndex={goToIndex}
             next={next}
             previous={previous}
-          />
+          /> */}
         </Section>
       </motion.div>
     </center>

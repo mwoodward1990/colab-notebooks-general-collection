@@ -38,7 +38,7 @@ function SingleSectionHeader(props) {
 
   const techsArr = project.technologies.split(", ");
   // write a function that takes in the techsArr and matches it to the icon and returns the icon
-  function getIcon(tech) {
+  function getIcon(tech) { //todo --> CHANGE TO SWITCH CASE
       if ( tech.toLowerCase() === "bootstrap" ) {
         return null; // replace null with bootstrap icon
       }
@@ -180,35 +180,35 @@ function SingleSectionHeader(props) {
       <Row style={{justifyContent:'center'}}>
         {project.features && ( 
           <Bounce top delay={1500}>
-            <Button variant="link" onClick={() => selector("features")}>
+            <Button variant="outline-secondary" type="button" size="sm" active onClick={() => selector("features")}>
               <h5>Features</h5>
             </Button>
           </Bounce> 
         )}
         {project.likes && ( 
           <Bounce top delay={1700}>
-            <Button variant="link" onClick={() => selector("likes")}>
+            <Button variant="outline-secondary" type="button" size="sm" onClick={() => selector("likes")}>
               {project.id === "salesforce" ?
                 <h5>Salesforce Instance</h5>:
-                  <h5>What do I like?</h5>
+                  <h5>Likes</h5>
               }
             </Button>
           </Bounce> 
         )}
         {(project.learnedFront || project.learnedBack) && ( 
           <Bounce top delay={1900}>
-            <Button variant="link" onClick={() => selector("learned")}>
+            <Button variant="outline-secondary" type="button" size="sm" onClick={() => selector("learned")}>
               {project.id === "salesforce" ?
                 <h5>Trailhead Progress</h5> :
-                  <h5>What did I learn?</h5>
+                  <h5>Learned</h5>
               }
             </Button>
           </Bounce> 
         )}
         {project.technologies && ( 
           <Bounce top delay={2100}>
-            <Button variant="link" onClick={() => selector("tech")}>
-              <h5>Technologies</h5>
+            <Button variant="outline-secondary" type="button" size="sm" onClick={() => selector("tech")}>
+              <h5>Tech</h5>
             </Button>
           </Bounce> 
         )}

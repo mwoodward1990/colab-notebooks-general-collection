@@ -45,7 +45,7 @@ const MyCarousel = ({
               <img 
                 src={item.img} 
                 alt={item.alt} 
-                style={{maxHeight:'400px', boxShadow:'4px 10px 10px gray'}}
+                style={{ maxHeight:'400px', boxShadow:'4px 10px 10px gray'}}
               />
             </a>
           </center>
@@ -66,11 +66,11 @@ const MyCarousel = ({
             }
         </Row>
         <Row style={glassStyle}>
-          <Col>   
+          <Col sm={12} md={6}>   
             <h3>Brief description</h3>
             <p>{item.description}</p>
           </Col>
-          <Col>
+          <Col sm={12} md={6} >
             <h3>Additional details</h3>
             <p>{item.status ? item.status : "No additional details at the moment.."}</p>
           </Col>
