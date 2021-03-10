@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
 import Alert from "@material-ui/lab/Alert";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import DashboardItems from "./DashboardItems";
-import DashboardProducts from "./DashboardProducts";
-import DashboardBlogs from "./DashboardBlogs";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import LinkMui from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 //components
+import DashboardBlogs from "./DashboardBlogs";
+import DashboardDetails from "./DashboardDetails";
+import DashboardItems from "./DashboardItems";
+import BootcampItems from "./BootcampItems";
+import DashboardProducts from "./DashboardProducts";
+import Calendar from './Calendar';
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
+import WeatherSection from "./WeatherSection";
 //database -- utilities
-import { Link, useRouter } from "./../util/router.js";
+import { useRouter } from "./../util/router.js";
 import { useAuth } from "./../util/auth.js";
 import { useActivitiesByOwner } from "../util/db.js";
 
@@ -30,6 +30,7 @@ function DashboardSection(props) {
   const classes = useStyles();
   const auth = useAuth();
   const router = useRouter();
+  console.info(auth)
 
   //? READ
   const {
@@ -59,6 +60,10 @@ function DashboardSection(props) {
       // height: theme.spacing(3),
     },
   };
+
+  const [date, changeDate] = useState(new Date());
+  console.info(date);
+  console.info(new Date(date).getDate());
 
 
   return (
@@ -90,87 +95,42 @@ function DashboardSection(props) {
             </Alert>
           </Box>
         )}
+
         <Grid container={true} spacing={4}>
-          <Grid item={true} xs={12} md={6}>
-            <DashboardItems />
-          </Grid>
-          <Grid item={true} xs={12} md={6}>
-            <Card>
-              <CardContent className={classes.cardContent}>
-                <Box>
-                  <Typography variant="h6" paragraph={true}>
-                    <strong>What is this?</strong>
-                  </Typography>
-                  <Typography paragraph={true}>
-                    The component on your left is an example UI that shows you
-                    how to fetch, display, and update a list of items that
-                    belong to the current authenticated user. Try it now by
-                    adding a couple items.
-                  </Typography>
-                  <Typography paragraph={true}>
-                    It also shows how you can limit features based on plan. If
-                    you're subscribed to the "pro" or "business" plan then
-                    you'll be able to use the star button to highlight items,
-                    otherwise you'll be asked to upgrade your plan.
-                  </Typography>
-                  <Typography paragraph={true}>
-                    After exporting your code, you'll want to modify this
-                    component to your needs. You may also find it easier to just
-                    use this component as a reference as you build out your
-                    custom UI.
-                  </Typography>
-                  <Box mt={3}>
-                    <Typography variant="h6" paragraph={true}>
-                      <strong>Extra debug info</strong>
-                    </Typography>
-                    <Typography component="div">
-                      <div>
-                        You are signed in as <strong>{auth.user.email}</strong>.
-                      </div>
-
-                      {auth.user.stripeSubscriptionId && (
-                        <>
-                          <div>
-                            You are subscribed to the{" "}
-                            <strong>{auth.user.planId} plan</strong>.
-                          </div>
-                          <div>
-                            Your plan status is{" "}
-                            <strong>
-                              {auth.user.stripeSubscriptionStatus}
-                            </strong>
-                            .
-                          </div>
-                        </>
-                      )}
-
-                      <div>
-                        You can change your account info{` `}
-                        {auth.user.stripeSubscriptionId && <>and plan{` `}</>}
-                        in{` `}
-                        <LinkMui component={Link} to="/settings/general">
-                          <strong>settings</strong>
-                        </LinkMui>
-                        .
-                      </div>
-
-                      {!auth.user.stripeSubscriptionId && (
-                        <div>
-                          You can signup for a plan in{" "}
-                          <LinkMui component={Link} to="/pricing">
-                            <strong>pricing</strong>
-                          </LinkMui>
-                          .
-                        </div>
-                      )}
-                    </Typography>
-                  </Box>
-                </Box>
-              </CardContent>
-            </Card>
+          <Grid item={true} xs={12} md={12}>
+            <DashboardDetails auth={auth} classes={classes} />
           </Grid>
         </Grid>
 
+        <Grid container={true} spacing={4}>
+          <Grid item={true} xs={12} md={6}>
+            <Calendar date={date} changeDate={changeDate} />
+          </Grid>
+          <Grid item={true} xs={12} md={6}>
+            <WeatherSection />
+          </Grid>
+        </Grid>
+
+        <Grid container={true} spacing={4}>
+          <Grid item={true} xs={12} md={6}>
+            <DashboardItems date={date} />
+          </Grid>
+
+
+          <Grid item={true} xs={12} md={6}>
+            <BootcampItems />
+          </Grid>
+        </Grid>
+
+        <Grid container={true} spacing={4}>
+          <Grid item={true} xs={12} md={6}>
+            <DashboardProducts />
+          </Grid>
+          <Grid item={true} xs={12} md={6}>
+            <DashboardBlogs />
+          </Grid>
+        </Grid>
+        
         <Grid container={true} spacing={4}>
           <Grid item={true} xs={12} md={6}>
             <DashboardProducts />

@@ -13,7 +13,8 @@ import { useRouter } from "../util/router";
 
 function ProjectsPage(props) {
   const router = useRouter();
-  const label = router.location.pathname.split('/')[2];
+  const label = router.location.pathname.split('/')[2]; // parse name from window.location.pathname
+  const formattedLabel = label.charAt(0).toUpperCase() + label.slice(1); //capitalize first letter
 
   return (
     <>
@@ -33,7 +34,7 @@ function ProjectsPage(props) {
               bg=""
               bgImage={icon_wallpaper}
               bgImageOpacity={0.4}
-              title={label + " projects"}
+              title={formattedLabel + " Projects"}
               subtitle=""
               textColor=""
               data={projectsData}

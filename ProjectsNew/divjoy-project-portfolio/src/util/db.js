@@ -25,6 +25,38 @@ export function createUser(uid, data) {
     .set({ uid, ...data }, { merge: true });
 }
 
+
+/**** ASSIGNMENTS ****/
+/* Example query functions (modify to your needs) */
+
+// Fetch all assignments by owner (hooek)
+export function useAssignmentsByOwner(owner) {
+  return useQuery(
+    owner && firestore.collection("assignments").where("owner", "==", owner)
+  );
+}
+
+// Fetch assignment data
+export function useAssignment(id) {
+  return useQuery(id && firestore.collection("assignments").doc(id));
+}
+
+// Update an assignment
+export function updateAssignment(id, data) {
+  return firestore.collection("assignments").doc(id).update(data);
+}
+
+// Create a new assignment
+export function createAssignment(data) {
+  return firestore.collection("assignments").add(data);
+}
+
+// Delete an assignment
+export function deleteAssignment(id) {
+  return firestore.collection("assignments").doc(id).delete();
+}
+
+
 /**** ITEMS ****/
 /* Example query functions (modify to your needs) */
 

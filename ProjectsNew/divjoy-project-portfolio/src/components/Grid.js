@@ -64,7 +64,7 @@ export default function Grid(props) {
                   boxShadow:"2px 10px 10px rgba(0, 0, 0, 0.4)",
                   cursor:'pointer'
                   }}
-                onHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.1 }}
               />
             </Card>
           )) :

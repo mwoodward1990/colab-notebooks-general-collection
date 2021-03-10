@@ -43,6 +43,7 @@ function DashboardBlogs(props) {
     error: blogsError,
   } = useBlogsByOwner(auth.user.uid);
 
+  console.info(blogs)
   const [creatingBlog, setCreatingBlog] = useState(false);
 
   const [updatingBlogId, setUpdatingBlogId] = useState(null);

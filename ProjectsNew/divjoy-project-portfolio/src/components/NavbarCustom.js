@@ -3,8 +3,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { LinkContainer } from "react-router-bootstrap";
 import Nav from "react-bootstrap/Nav";
+import { useAuth } from '../util/auth';
 
 function NavbarCustom(props) {
+  const auth = useAuth()
   return (
     <Navbar bg={props.bg} variant={props.variant} expand={props.expand}>
       <Container>
@@ -34,6 +36,15 @@ function NavbarCustom(props) {
             <LinkContainer to="/add-projects">
               <Nav.Link active={false}>{props.link_4}</Nav.Link>
             </LinkContainer>
+            {auth.user &&
+              <LinkContainer to="/auth/signout"onClick={(e) => {
+                  e.preventDefault();
+                  auth.signout();
+                }}
+              >
+                <Nav.Link active={false}>Logout</Nav.Link>
+              </LinkContainer>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>

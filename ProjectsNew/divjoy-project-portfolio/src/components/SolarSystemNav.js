@@ -12,7 +12,8 @@ import {
   FaLaptopCode,
   FaReact,
   FaRocket,
-  FaSalesforce
+  FaSalesforce,
+  FaNodeJs
 } from 'react-icons/fa';
 import { SiJavascript, SiPython } from 'react-icons/si';
 import { IoMdApps } from 'react-icons/io';
@@ -76,18 +77,15 @@ const SolarSystemNav = (props) => {
           hideOrbit
           >
 
-          <Rotate topLeft delay={4600}>
+          <Rotate topLeft delay={4000}>
             <Planet
               centerContent={
-                  <motion.div onHoverStart={{ scale: 1.1 }}>
-                    <IoMdApps size="42px" style={planetStyle} onClick={(e) => handleClick(e, '/projects/all', '')}/>
-                  </motion.div>
-                }
+                <FaWordpress size="44px" style={planetStyle} onClick={(e) => handleClick(e, '/projects/wordpress', 'wordpress')}/>
+              }
               close
               autoClose
               hideOrbit
               dragablePlanet
-              rotation={0}
               dragRadiusPlanet={40}
               bounce
               bounceDirection="BOTTOM"
@@ -132,22 +130,6 @@ const SolarSystemNav = (props) => {
               bounceRadius={10}
             />
           </Rotate>
-          
-          <Rotate topLeft delay={4000}>
-            <Planet
-              centerContent={
-                <FaWordpress size="44px" style={planetStyle} onClick={(e) => handleClick(e, '/projects/wordpress', 'wordpress')}/>
-              }
-              close
-              autoClose
-              hideOrbit
-              dragablePlanet
-              dragRadiusPlanet={40}
-              bounce
-              bounceDirection="BOTTOM"
-              bounceRadius={10}
-            />
-          </Rotate>
 
           <Rotate topLeft delay={3800}>
             <Planet
@@ -165,6 +147,25 @@ const SolarSystemNav = (props) => {
             />
           </Rotate>
 
+          <Rotate topLeft delay={3300}>
+            <Planet
+              centerContent={
+                  <motion.div onHoverStart={{ scale: 1.1 }}>
+                    <FaNodeJs size="42px" style={planetStyle} onClick={(e) => handleClick(e, '/projects/sql', 'sql')}/>
+                  </motion.div>
+                }
+              close
+              autoClose
+              hideOrbit
+              dragablePlanet
+              rotation={0}
+              dragRadiusPlanet={40}
+              bounce
+              bounceDirection="BOTTOM"
+              bounceRadius={10}
+            />
+          </Rotate>
+          
           <Rotate topLeft delay={3600}>
             <Planet
               centerContent={
@@ -181,11 +182,11 @@ const SolarSystemNav = (props) => {
             />
           </Rotate>
 
-          <Rotate topLeft delay={3300}>
+          <Rotate topLeft delay={4600}>
             <Planet
               centerContent={
                   <motion.div onHoverStart={{ scale: 1.1 }}>
-                    <DiSqllite size="42px" style={planetStyle} onClick={(e) => handleClick(e, '/projects/sql', 'sql')}/>
+                    <IoMdApps size="42px" style={planetStyle} onClick={(e) => handleClick(e, '/projects/all', '')}/>
                   </motion.div>
                 }
               close
@@ -199,6 +200,7 @@ const SolarSystemNav = (props) => {
               bounceRadius={10}
             />
           </Rotate>
+          
           <div />
           <div />
           <div />

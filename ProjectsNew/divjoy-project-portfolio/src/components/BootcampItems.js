@@ -15,13 +15,13 @@ import IconButton from "@material-ui/core/IconButton";
 import StarIcon from "@material-ui/icons/Star";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-import EditItemModal from "./EditItemModal";
-import { useAuth } from "./../util/auth.js";
-import { updateItem, deleteItem, useItemsByOwner } from "./../util/db.js";
+import EditAssignmentModal from "./EditAssignmentModal";
+import { useAuth } from "../util/auth.js";
+import { updateAssignment, deleteAssignment, useAssignmentsByOwner } from "../util/db.js";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  paperItems: {
+  paperAssignments: {
     minHeight: "300px",
   },
   featured: {
@@ -33,98 +33,110 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function DashboardItems(props) {
+function BootcampAssignments(props) {
   const classes = useStyles();
   const todaysDate = new Date().getDate();
   const month = new Date().getMonth();
   const auth = useAuth();
 
   const {
-    data: items,
-    status: itemsStatus,
-    error: itemsError,
-  } = useItemsByOwner(auth.user.uid);
+    data: assignments,
+    status: assignmentsStatus,
+    error: assignmentsError,
+  } = useAssignmentsByOwner(auth.user.uid);
 
-  console.info(items);
+  console.info(assignments);
 
-  const [creatingItem, setCreatingItem] = useState(false);
+  const [creatingAssignment, setCreatingAssignment] = useState(false);
 
-  const [updatingItemId, setUpdatingItemId] = useState(null);
+  const [updatingAssignmentId, setUpdatingAssignmentId] = useState(null);
 
-  const itemsAreEmpty = !items || items.length === 0;
+  const assignmentsAreEmpty = !assignments || assignments.length === 0;
 
   const canUseStar =
     auth.user.planIsActive &&
     (auth.user.planId === "pro" || auth.user.planId === "business");
 
-  const handleStarItem = (item) => {
-    updateItem(item.id, { featured: !item.featured });
+  const handleStarAssignment = (assignment) => {
+    updateAssignment(assignment.id, { featured: !assignment.featured });
 
     //? IF WOULD LIKE TO USE PAID FEATURES
     // if (canUseStar) {
-    //   updateItem(item.id, { featured: !item.featured });
+    //   updateAssignment(Assignment.id, { featured: !Assignment.featured });
     // } else {
     //   alert("You must upgrade to the pro or business plan to use this feature");
     // }
   };
 
-  const handleCheckbox = (event, item) => {
-    updateItem(item.id, { completed: !item.completed });
+  const handleCheckbox = (event, assignment) => {
+    updateAssignment(assignment.id, { completed: !assignment.completed });
   };
 
   const date = new Date(props.date).getDate();
-  console.info(date)
+  {assignments &&
+    console.info(assignments.length)
+  }
 
   return (
     <>
-      {itemsError && (
+      {assignmentsError && (
         <Box mb={3}>
-          <Alert severity="error">{itemsError.message}</Alert>
+          <Alert severity="error">{assignmentsError.message}</Alert>
         </Box>
       )}
 
-      <Paper className={classes.paperItems}>
+      <Paper className={classes.paperAssignments}>
         <Box
           display="flex"
           justifyContent="space-between"
-          alignItems="center"
+          alignAssignments="center"
           padding={2}
         >
           <Typography className={classes.text} variant="h5">
-            Daily To Do's {month+1}/{date}
+            Bootcamp Project Assignments
           </Typography>
           <Button
             variant="contained"
             size="medium"
             color="primary"
-            onClick={() => setCreatingItem(true)}
+            onClick={() => setCreatingAssignment(true)}
           >
-            Add Item
+            Add Assignment
           </Button>
         </Box>
         <Divider />
 
-        {(itemsStatus === "loading" || itemsAreEmpty) && (
+        {(assignmentsStatus === "loading" || assignmentsAreEmpty) && (
           <Box py={5} px={3} align="center">
-            {itemsStatus === "loading" && <CircularProgress size={32} />}
+            {assignmentsStatus === "loading" && <CircularProgress size={32} />}
 
-            {( itemsStatus !== "loading" && itemsAreEmpty ) && (
-              <>Nothing yet. Click the button to add your first item.</>
+            {( assignmentsStatus !== "loading" && assignmentsAreEmpty ) && (
+              <>Nothing yet. Click the button to add your first Assignment.</>
             )}
           </Box>
         )}
 
-        {itemsStatus !== "loading" && items && items.length > 0 && (
+        {assignments &&
+          <Box py={5} px={3} align="center">
+              <># of Assignments -- {assignments.length}</>
+          </Box>
+        }
+
+        {assignmentsStatus !== "loading" && assignments && assignments.length > 0 && (
           <List disablePadding={true}>
-            {items.filter(item => item.date === new Date(props.date).getDate() ).map((item, index) => (
+            {assignments.map((assignment, index) => (
               <ListItem
                 key={index}
-                divider={index !== items.length - 1}
-                className={item.featured && classes.featured}
+                divider={index !== assignments.length - 1}
+                className={assignment.featured && classes.featured}
               >
-                {item.completed ?
-                  <ListItemText><strike>{month+1}/{item.date} {item.name}</strike></ListItemText> :
-                    <ListItemText>{month+1}/{item.date} {item.name}</ListItemText>
+                {assignment.completed ?
+                  <ListItemText>
+                    <strike>{index + 1}. {assignment.name} <b> Due: {month+1}/{assignment.date}</b></strike>
+                  </ListItemText> :
+                    <ListItemText>
+                      {index + 1}. {assignment.name} <b> Due: {month+1}/{assignment.date}</b>
+                    </ListItemText>
                 }
                 <ListItemSecondaryAction>
                   <IconButton
@@ -132,8 +144,8 @@ function DashboardItems(props) {
                     aria-label="completed"
                   >
                     <Checkbox
-                      checked={item.completed}
-                      onChange={e => handleCheckbox(e, item)}
+                      checked={assignment.completed}
+                      onChange={e => handleCheckbox(e, assignment)}
                       color="primary"
                       inputProps={{ 'aria-label': 'primary checkbox' }}
                     />
@@ -141,22 +153,22 @@ function DashboardItems(props) {
                   <IconButton
                     edge="end"
                     aria-label="star"
-                    onClick={() => handleStarItem(item)}
-                    className={item.featured && classes.starFeatured}
+                    onClick={() => handleStarAssignment(assignment)}
+                    className={assignment.featured && classes.starFeatured}
                   >
                     <StarIcon />
                   </IconButton>
                   <IconButton
                     edge="end"
                     aria-label="update"
-                    onClick={() => setUpdatingItemId(item.id)}
+                    onClick={() => setUpdatingAssignmentId(assignment.id)}
                   >
                     <EditIcon />
                   </IconButton>
                   <IconButton
                     edge="end"
                     aria-label="delete"
-                    onClick={() => deleteItem(item.id)}
+                    onClick={() => deleteAssignment(assignment.id)}
                   >
                     <DeleteIcon />
                   </IconButton>
@@ -167,16 +179,16 @@ function DashboardItems(props) {
         )}
       </Paper>
 
-      {creatingItem && <EditItemModal onDone={() => setCreatingItem(false)} />}
+      {creatingAssignment && <EditAssignmentModal onDone={() => setCreatingAssignment(false)} />}
 
-      {updatingItemId && (
-        <EditItemModal
-          id={updatingItemId}
-          onDone={() => setUpdatingItemId(null)}
+      {updatingAssignmentId && (
+        <EditAssignmentModal
+          id={updatingAssignmentId}
+          onDone={() => setUpdatingAssignmentId(null)}
         />
       )}
     </>
   );
 }
 
-export default DashboardItems;
+export default BootcampAssignments;
